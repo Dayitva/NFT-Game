@@ -115,12 +115,12 @@ const Arena = ({ characterNFT, setCharacterNFT }) => {
         gameContract.off("AttackComplete", onAttackComplete);
       }
     };
-  }, [gameContract]);
+  }, [gameContract, setCharacterNFT]);
 
   return (
     <div className="arena-container">
       {/* Toast HTML */}
-      {boss && (
+      {boss && showToast && (
         <div id="toast" className="show">
           <div id="desc">{`💥 ${boss.name} was hit for ${characterNFT.attackDamage}!`}</div>
         </div>
